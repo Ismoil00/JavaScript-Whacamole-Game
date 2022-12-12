@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  background: radial-gradient(rgb(255, 72, 0), rgba(255, 72, 0, 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Whac-a-mole GAME: */
+#WhacaMoleGame {
+  width: 550px;
+  padding: 20px 0;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#SpeedScoreContainer,
+#timeContainer {
+  width: 100%;
+  padding: 0 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.speedSec {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#increaseSpeed,
+#decreaseSpeed {
+  width: 20px;
+  height: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: darkblue;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: all 0.1s;
+}
+
+#increaseSpeed:hover,
+#decreaseSpeed:hover {
+  color: gray;
+}
+
+#increaseSpeed:active,
+#decreaseSpeed:active {
+  box-shadow: 0 0 5px darkblue;
+}
+
+.speedSec h2 {
+  margin: 0 10px;
+  font-size: 1rem;
+  color: darkblue;
+}
+
+#timeSet {
+  width: 80px;
+  height: 30px;
+  padding-left: 5px;
+  background-color: rgba(0, 0, 139, 0.5);
+  border: 1px solid darkblue;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  outline: none;
+  color: rgb(0, 11, 36);
+  font-weight: bold;
+}
+
+#submitBtn {
+  height: 32px;
+  padding: 0 10px;
+  margin-left: -5px;
+  background-color: transparent;
+  border: 1px solid darkblue;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: darkblue;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+#submitBtn:hover,
+#start:hover {
+  background-color: rgba(0, 0, 139, 0.5);
+  color: rgb(0, 11, 36);
+}
+
+#submitBtn:active,
+#start:active {
+  color: rgb(0, 76, 255);
+}
+
+#timeContainer h2,
+#yourScore {
+  font-size: 1.2rem;
+  color: darkblue;
+}
+
+.parentDiv {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid black;
+}
+
+#playBtn {
+  display: block;
+  margin: 0 auto;
+  padding: 5px 15px;
+  font-size: 1rem;
+  border: 1px solid darkblue;
+  border-radius: 20px;
+  background-color: transparent;
+  color: darkblue;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#playBtn:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+#playBtn:active {
+  background-color: rgb(0, 47, 117);
+  color: white;
+}
+
+.square {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.mole {
+  background-image: url(images/mole.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#WhacaMoleGame h2 {
+  font-family: sans-serif;
+}
+
+.gameOver {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: red;
+}
+
+.finalInfo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: darkblue;
+}
+
+/* Screen Accordance */
+@media (max-width: 500px) {
+  #WhacaMoleGame {
+    width: 100%;
+  }
+  .parentDiv {
+    width: 300px;
+    height: 300px;
+  }
+  .parentDiv div {
+    width: 100px;
+    height: 100px;
+  }
+  #timeSet {
+    width: 50px;
+    height: 25px;
+  }
+  #submitBtn {
+    height: 27px;
+    padding: 0 5px;
+  }
+  #timeContainer h2,
+  #yourScore {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 370px) {
+  #SpeedScoreContainer,
+  #timeContainer {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 300px) {
+  .parentDiv {
+    width: 240px;
+    height: 240px;
+  }
+  .parentDiv div {
+    width: 80px;
+    height: 80px;
+  }
+  #SpeedScoreContainer,
+  #timeContainer {
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}
